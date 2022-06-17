@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Temperature Converter</title>
+    <script>
+        function temperature() {
+            var strSelectedItem = document.getElementById("convertTo").value;
+            var intQuantity = document.getElementById("temp").value;
+            
+            if (strSelectedItem == "c") {
+                
+                document.getElementById("temperature").innerHTML = parseFloat((intQuantity*1.8)+32).toFixed(2) +" ℉";           
+              }
+            if (strSelectedItem == "f") {
+                document.getElementById("temperature").innerHTML = parseFloat((intQuantity-32) / 1.8).toFixed(2) +" ℃";           
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="container mt-3">
+        <div class="row">
+            <div class="card col-md-5 m-auto">
+                <div class="card-body">
+                    <h5 class="card-title" style="text-align: center;">Temperature Converter By Junaid</h5>
+                  
+                        <label for="convertTo" class="mb-2">Convert To</label>
+                        <select id="convertTo" class="form-select" aria-label="Default select example">
+                            <option value="c">Degree Celsius</option>
+                            <option value="f">Forenheit</option>
+                        </select>
+                        <div class="form-group mt-3">
+                            <label for="temp" class="mb-2">Temperature</label>
+                            <input type="number" class="form-control" id="temp"
+                                placeholder="Enter Quantity Required">
+                        </div>
+                        <button onclick="temperature();" class="btn btn-primary mt-2">Convert</button>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row col-md-12 text-center mt-3 ">
+            <h2>Temperature Is</h2>
+            <h5 id="temperature"></h5>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Bill Calculator</title>
+    <script>
+        function bill() {
+            var strSelectedItem = document.getElementById("item").value;
+            var intQuantity = document.getElementById("quantity").value;
+            if (strSelectedItem == "book") {
+                let userBill = 200 * intQuantity;
+                document.getElementById("bill").innerHTML = userBill +" PKR";      
+            }
+            if (strSelectedItem == "pen") {
+                let userBill = 40 * intQuantity;
+                document.getElementById("bill").innerHTML = userBill +" PKR";
+            }
+            if (strSelectedItem == "pencil") {
+                let userBill = 10 * intQuantity;
+                document.getElementById("bill").innerHTML = userBill +" PKR";
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="container mt-2">
+        <div class="row">
+            <div class="card col-md-5 m-auto">
+                <div class="card-body">
+                    <h5 class="card-title" style="text-align: center;">Bill Calculator By Junaid Qasim</h5>
+                  
+                        <label for="item" class="mb-2">Item</label>
+                        <select id="item" class="form-select" aria-label="Default select example">
+                            <option selected>Please Select Your Item</option>
+                            <option value="book">Book</option>
+                            <option value="pencil">Pencil</option>
+                            <option value="pen">Pen</option>
+                        </select>
+                        <div class="form-group mt-2">
+                            <label for="quantity" class="mb-2">Quantity</label>
+                            <input type="number" class="form-control" id="quantity"
+                                placeholder="Enter Quantity Required">
+                        </div>
+                        <button onclick="bill();" class="btn btn-primary mt-2">Calculate</button>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row col-md-12 text-center mt-3 ">
+            <h2>Your Bill is</h2>
+            <h5 id="bill"></h5>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
