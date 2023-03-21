@@ -1,0 +1,5 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target" : { "namespace": "android_app", "package_name": "com.myflyapp.www",
+                 "sha256_cert_fingerprints": ["4C:92:FC:85:EA:6D:6D:37:77:5D:68:1C:8F:F9:DE:EB:0B:38:09:8B:A9:35:D6:BA:09:B1:C9:90:92:5C:27:CC"] }
+  }]
